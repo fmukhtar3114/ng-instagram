@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  @Input() windowWidth;
+  @Input() profileInfo;
 
-  constructor() { }
+  @Output() setClickProfileEvent = new EventEmitter();
 
-  ngOnInit(): void {
+  public sideStyle: any = {};
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  ngOnChanges() {
+    const element = document.getElementById('igpost-main');
+
+    if (element !== undefined && element !== null) {
+      const leftPos = element.getBoundingClientRect().left + window.scrollX;
+      this.sideStyle = { left: (leftPos + 642).toString() + 'px' };
+    }
+  }
+
+  ngAfterViewInit(): void {
+    const element = document.getElementById('igpost-main');
+    const leftPos = element.getBoundingClientRect().left + window.scrollX;
+    this.sideStyle = { left: (leftPos + 642).toString() + 'px' };
+  }
+
+  public setClickProfile() {
+    this.setClickProfileEvent.emit();
   }
 
 }
