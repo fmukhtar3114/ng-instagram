@@ -5,6 +5,7 @@
     [clickNav]="clickNav"
     (handleNavClickEvent)="handleClickNav($event)"
   ></app-header>
-  <app-footer *ngIf="windowWidth <= 1056"></app-footer>
   <router-outlet></router-outlet>
+  <app-footer *ngIf="windowWidth <= 1056"></app-footer>
+
 </div>

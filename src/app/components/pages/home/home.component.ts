@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
   public clickNav: string = 'home';
   public inbox: number = 5;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("in home")
+  }
 
   public handleResize(e) {
     this.windowWidth = e.target.innerWidth;

@@ -8,11 +8,11 @@ const homeIcon = {
 };
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['../icons.component.css', './home.component.css'],
+  selector: 'app-home-icon',
+  templateUrl: './home-icon.component.html',
+  styleUrls: ['../icons.component.css', './home-icon.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeIconComponent implements OnInit {
   @Input() clickMe;
   public icon: string;
 

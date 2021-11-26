@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-main',
@@ -13,9 +14,11 @@ export class MainComponent implements OnInit {
 
   public sideStyle: any = {};
 
-  constructor() {}
+  constructor(private userService  :UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadUsers()
+  }
 
   ngOnChanges() {
     const element = document.getElementById('igpost-main');
@@ -30,6 +33,11 @@ export class MainComponent implements OnInit {
     const element = document.getElementById('igpost-main');
     const leftPos = element.getBoundingClientRect().left + window.scrollX;
     this.sideStyle = { left: (leftPos + 642).toString() + 'px' };
+  }
+  loadUsers(){
+    this.userService.getUsers(1,2).subscribe(response=>{
+      console.log(response)
+    })
   }
 
   public setClickProfile() {

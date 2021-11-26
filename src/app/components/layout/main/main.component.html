@@ -1,1 +1,31 @@
-<p>main works!</p>
+<section *ngIf="windowWidth <= 1056" class="main-section">
+  <div id="igpost-main">
+    <div class="">
+      <div class="igpost-container">
+        <article
+          *ngFor="let post of modifiedPosts; let i = index"
+          class="igpost dark-off"
+          id="{{ i }}"
+        >
+          <app-post></app-post>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section *ngIf="windowWidth > 1056" class="main-section-2">
+  <div id="igpost-main">
+    <div class="">
+      <div class="igpost-container">
+        <article
+          *ngFor="let post of modifiedPosts; let i = index"
+          class="igpost dark-off"
+          id="{{ i }}"
+        >
+          <app-post></app-post>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="post-story-gap"></div>
+</section>
