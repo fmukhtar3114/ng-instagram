@@ -1,0 +1,24 @@
+<header>
+  <div class="igpost-postby-photo" tabIndex="0">
+    <canvas height="42" width="42"></canvas>
+    <a routerLink="/{{ postHeaderInfo.name.first }}/">
+      <img
+        alt="{{postHeaderInfo.name.first }}  {{postHeaderInfo.name.last }}'s Profile Pic"
+        src="{{ postHeaderInfo.picture.thumbnail }}"
+      />
+    </a>
+  </div>
+  <div class="igpost-postby-label">
+    <div class="igpost-postby-userid">
+      <div class="igpost-postby-name-content">
+        <a> {{postHeaderInfo.name.first }}  {{postHeaderInfo.name.last }}</a>
+      </div>
+    </div>
+    <div class="igpost-postby-location">
+      <div></div>
+      <div>
+        <a >{{ postHeaderInfo.location.country }}</a>
+      </div>
+    </div>
+  </div>
+</header>

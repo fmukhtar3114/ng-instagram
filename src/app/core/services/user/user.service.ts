@@ -12,7 +12,7 @@ export class UserService extends BaseHttpService {
     super(http, spinner);
   }
   getUsers(page: number, pageSize: number) {
-    let url = `${ApiConfig.GetUsers}?page=${page}&results=${pageSize}$seed=feed`
+    let url = `${ApiConfig.GetUsers}?page=${page}&results=${pageSize}&seed=feed`
     return  this.get(url);
   }
 }

@@ -1,1 +1,9 @@
-<p>post works!</p>
+
+<div>
+  <app-post-header [postHeaderInfo]="postHeaderInfo"></app-post-header>
+  <app-description *ngIf="postDetail"
+    [postDetail]="postDetail"
+    (handlePostLikeEvent)="handleLikePost($event)"
+  ></app-description>
+</div>
+

@@ -20,6 +20,22 @@ import { PostComponent } from './components/post/post.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PostHeaderComponent } from './components/post/post-header/post-header.component';
+import { AddCommentComponent } from './components/post/description/add-comment/add-comment.component';
+import { CaptionbarComponent } from './components/post/description/captionbar/captionbar.component';
+import { CommentbarComponent } from './components/post/description/commentbar/commentbar.component';
+import { IconbarComponent } from './components/post/description/iconbar/iconbar.component';
+import { LikebarComponent } from './components/post/description/likebar/likebar.component';
+import { TimebarComponent } from './components/post/description/timebar/timebar.component';
+import { DescriptionComponent } from './components/post/description/description.component';
+import { SidepanelComponent } from './components/layout/main/sidepanel/sidepanel.component';
+import { SideProfileComponent } from './components/layout/main/sidepanel/side-profile/side-profile.component';
+import { SideStoryComponent } from './components/layout/main/sidepanel/side-story/side-story.component';
+import { SuggestionRowComponent } from './components/layout/main/sidepanel/suggestion/suggestion-row/suggestion-row.component';
+import { StoryComponent } from './components/layout/main/story/story.component';
+import { StoryRowComponent } from './components/layout/main/sidepanel/side-story/story-row/story-row.component';
+import { SuggestionComponent } from './components/layout/main/sidepanel/suggestion/suggestion.component';
+import { PostListComponent } from './components/post/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +55,22 @@ import { HttpClientModule } from '@angular/common/http';
     PostComponent,
     MainComponent,
     HomeComponent,
+    PostHeaderComponent,
+    AddCommentComponent,
+    CaptionbarComponent,
+    CommentbarComponent,
+    IconbarComponent,
+    LikebarComponent,
+    TimebarComponent,
+    DescriptionComponent,
+    SidepanelComponent,
+    SideProfileComponent,
+    SideStoryComponent,
+    SuggestionRowComponent,
+    StoryComponent,
+    StoryRowComponent,
+    SuggestionComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,

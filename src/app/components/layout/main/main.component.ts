@@ -10,6 +10,7 @@ export class MainComponent implements OnInit {
   @Input() windowWidth;
   @Input() profileInfo;
 
+  userPostsInfo = []
   @Output() setClickProfileEvent = new EventEmitter();
 
   public sideStyle: any = {};
@@ -36,9 +37,14 @@ export class MainComponent implements OnInit {
   }
   loadUsers(){
     this.userService.getUsers(1,2).subscribe(response=>{
-      console.log(response)
+     this.userPostsInfo = response.results
+
     })
   }
+
+
+
+
 
   public setClickProfile() {
     this.setClickProfileEvent.emit();
