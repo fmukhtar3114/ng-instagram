@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
   @Output() setClickProfileEvent = new EventEmitter();
 
   public sideStyle: any = {};
+  isLoaded: boolean;
 
   constructor(private userService  :UserService) {}
 
@@ -42,7 +43,7 @@ export class MainComponent implements OnInit {
   loadUsers(){
     this.userService.getUsers(1,2).subscribe(response=>{
      this.userPostsInfo = response.results
-
+    this.isLoaded = true
     })
   }
 

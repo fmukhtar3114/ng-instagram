@@ -1,10 +1,10 @@
 
 <div>
   <app-post-header [postHeaderInfo]="postHeaderInfo"></app-post-header>
-  <app-photo *ngIf="postDetail"
+  <app-photo
   [postDetail]="postDetail"
 ></app-photo>
-  <app-description *ngIf="postDetail"
+  <app-description
     [postDetail]="postDetail"
     (handlePostLikeEvent)="handleLikePost($event)"
   ></app-description>
