@@ -8,7 +8,11 @@ import { UserService } from 'src/app/core/services/user/user.service';
 })
 export class MainComponent implements OnInit {
   @Input() windowWidth;
-  @Input() profileInfo;
+  @Input() profileInfo = {
+    userId: 'fmukhtar',
+    userName: 'Fatima Khan',
+    profilePhoto: 'assets/img/fmukhtar.jpg',
+  };
 
   userPostsInfo = []
   @Output() setClickProfileEvent = new EventEmitter();

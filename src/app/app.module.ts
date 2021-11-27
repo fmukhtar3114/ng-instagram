@@ -36,7 +36,8 @@ import { StoryComponent } from './components/layout/main/story/story.component';
 import { StoryRowComponent } from './components/layout/main/sidepanel/side-story/story-row/story-row.component';
 import { SuggestionComponent } from './components/layout/main/sidepanel/suggestion/suggestion.component';
 import { PostListComponent } from './components/post/post-list/post-list.component';
-
+import { PhotoComponent } from './components/post/photo/photo.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,14 +71,16 @@ import { PostListComponent } from './components/post/post-list/post-list.compone
     StoryComponent,
     StoryRowComponent,
     SuggestionComponent,
-    PostListComponent
+    PostListComponent,
+    PhotoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
