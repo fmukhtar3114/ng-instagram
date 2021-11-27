@@ -1,16 +1,26 @@
-
-<section  class="main-section" *ngIf="windowWidth <= 1056 ">
-  {{windowWidth}}
-  <app-post-list  *ngIf="isLoaded" [userPostsInfo]="userPostsInfo"></app-post-list>
+<section class="main-section" *ngIf="windowWidth <= 1056">
+  {{ windowWidth }}
+  <app-post-list
+    *ngIf="isLoaded"
+    [userPostsInfo]="userPostsInfo"
+  ></app-post-list>
 </section>
 
-<section  class="main-section"  *ngIf="windowWidth > 1056 ">
-
-  <app-post-list  *ngIf="isLoaded"
-    [userPostsInfo]="userPostsInfo"
-    class="igpost-outer"
-  ></app-post-list>
+<section class="main-section" *ngIf="windowWidth > 1056">
+  <div  class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false"
+  >
+    >
+    <app-post-list
+      *ngIf="isLoaded"
+      [userPostsInfo]="userPostsInfo"
+      class="igpost-outer"
+    ></app-post-list>
+  </div>
 
   <div class="post-story-gap"></div>
-
 </section>

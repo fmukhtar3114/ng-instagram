@@ -13,14 +13,16 @@ export class MainComponent implements OnInit {
     userName: 'Fatima Khan',
     profilePhoto: 'assets/img/fmukhtar.jpg',
   };
+  page = 1
 
+  pageSize = 10
   userPostsInfo = []
   @Output() setClickProfileEvent = new EventEmitter();
 
   public sideStyle: any = {};
   isLoaded: boolean;
 
-  constructor(private userService  :UserService) {}
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.loadUsers()
@@ -28,7 +30,8 @@ export class MainComponent implements OnInit {
 
   ngOnChanges() {
     const element = document.getElementById('igpost-main');
-
+    if (!element)
+      return
     if (element !== undefined && element !== null) {
       const leftPos = element.getBoundingClientRect().left + window.scrollX;
       this.sideStyle = { left: (leftPos + 642).toString() + 'px' };
@@ -37,16 +40,26 @@ export class MainComponent implements OnInit {
 
   ngAfterViewInit(): void {
     const element = document.getElementById('igpost-main');
+    if (!element)
+      return
     const leftPos = element.getBoundingClientRect().left + window.scrollX;
     this.sideStyle = { left: (leftPos + 642).toString() + 'px' };
   }
-  loadUsers(){
-    this.userService.getUsers(1,2).subscribe(response=>{
-     this.userPostsInfo = response.results
-    this.isLoaded = true
+  loadUsers() {
+    this.userService.getUsers(this.pageSize, this.pageSize).subscribe(response => {
+      this.userPostsInfo = response.results
+      this.isLoaded = true
+    })
+
+  }
+  onScroll() {
+
+    this.page ++;
+    this.userService.getUsers(this.page, this.pageSize).subscribe(response => {
+      this.userPostsInfo = [...this.userPostsInfo,response.results]
+      this.isLoaded = true
     })
   }
-
 
 
 

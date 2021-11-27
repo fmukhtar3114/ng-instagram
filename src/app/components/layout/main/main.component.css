@@ -97,3 +97,8 @@ app-sidepanel {
   max-width: 614px;
   width: 100%;
 }
+.search-results {
+  height: 40rem;
+  overflow: scroll;
+  width: 35rem;
+}

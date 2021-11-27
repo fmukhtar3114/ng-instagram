@@ -38,6 +38,7 @@ import { SuggestionComponent } from './components/layout/main/sidepanel/suggesti
 import { PostListComponent } from './components/post/post-list/post-list.component';
 import { PhotoComponent } from './components/post/photo/photo.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +81,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     CommonModule,
     NgxSpinnerModule,
     HttpClientModule,
-    ScrollingModule
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
